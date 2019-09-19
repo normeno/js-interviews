@@ -1,4 +1,7 @@
-class Prime {
+export default class Prime {
+  constructor() {
+    // TODO
+  }
   validNumber = (originalNum: number, recursive: boolean = false) => {
     let result: boolean = true;
     
@@ -50,23 +53,3 @@ class Prime {
     return result;
   }
 }
-
-const recursiveNumbers: Array<number> = [3753, 73, 3793];
-const simpleNumbers: Array<number> = [7, 103, 51];
-const prime: Prime = new Prime();
-
-recursiveNumbers.forEach((value) => {
-  const valid = prime.validNumber(value, true);
-  
-  (valid)
-    ? console.log(`${value} is prime (recursive)`)
-    : console.log(`${value} is not prime (recursive)`);
-});
-
-simpleNumbers.forEach((value) => {
-  const valid = prime.validNumber(value, true);
-  
-  (valid)
-    ? console.log(`${value} is prime`)
-    : console.log(`${value} is not prime`);
-});
