@@ -37,5 +37,8 @@
     "mocha": "^6.2.0",
     "nodemon": "^1.19.2",
     "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

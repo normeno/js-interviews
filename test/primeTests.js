@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Prime = require('../lib/prime/prime').default;
+var Prime = require('../lib/algorithms/prime/prime').default;
 
 describe('#recursive()', () => {
   it('Should return prime', () => {
