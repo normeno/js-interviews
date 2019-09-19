@@ -8,7 +8,11 @@
   },
   "scripts": {
     "test": "mocha",
-    "build": "./node_modules/.bin/babel src --out-dir lib"
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build:types:watch": "tsc -w --emitDeclarationOnly",
+    "build:js:watch": "babel -w src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
   },
   "repository": {
     "type": "git",
@@ -21,9 +25,17 @@
   },
   "homepage": "https://github.com/normeno/js-interviews#readme",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
+    "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.6.0",
-    "mocha": "^6.2.0"
+    "@babel/preset-typescript": "^7.6.0",
+    "babel-watch": "^7.0.0",
+    "concurrently": "^4.1.2",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2",
+    "typescript": "^3.6.3"
   }
 }
